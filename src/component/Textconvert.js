@@ -138,7 +138,7 @@ export default function Textconvert(props) {
         <p>
           <b>
             {
-              writtenText.split(" ").filter((element) => {
+              writtenText.split(/\s+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }
@@ -146,7 +146,7 @@ export default function Textconvert(props) {
           Words and <b>{writtenText.length}</b> Characters
         </p>
         <p>
-          We can read in{" "}
+          We can read in {" "}
           <b>
             {writtenText.split(" ").filter((element) => {
               return element.length !== 0;
