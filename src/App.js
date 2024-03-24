@@ -38,34 +38,36 @@ function App() {
   };
   return (
     <>
-     {/*  <Router> */}
-        <Navbar
-          title="TextUtils"
-          aboutText="About TextUtils"
-          mode={mode}
-          toggleMode={toggleMode}
-          lableMode={lableMode}
-        />
-        <Alert alert={alert} />
-       {/*  <Routes> */}
- {/*          <Route
+      {/*  <Router> */}
+      <Navbar
+        title="TextUtils"
+        aboutText="About TextUtils"
+        mode={mode}
+        toggleMode={toggleMode}
+        lableMode={lableMode}
+      />
+      <Alert alert={alert} />
+      {/*  <Routes> */}
+      {/*          <Route
             exact
             path="/"
             element={ */}
-              <Textconvert
-                header="Enter text here for analyze below"
-                mode={mode}
-                showAlert={showAlert}
-              />
-        {/*    }
+      <Textconvert
+        header="Try Textutils - Word Counter, Character Counter, Remove Extra Spaces"
+        mode={mode}
+        showAlert={showAlert}
+      />
+      {/*    }
           /> 
           <Route
             exact
             path="/about"
             element={<About aboutTitle="About US" />}
           />
+          
         </Routes> */}
-{/*       </Router> */}
+      {/* <About aboutTitle="About US" mode={mode}/> */}
+      {/*       </Router> */}
     </>
   );
 }

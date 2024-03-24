@@ -34,6 +34,7 @@ export default function Textconvert(props) {
   const handleCopy = () => {
     let text = document.getElementById("myBox");
     text.select();
+    document.getSelection().removeAllRanges();
     navigator.clipboard.writeText(text.value);
     props.showAlert("Words are Copied", "success");
   };
@@ -62,7 +63,7 @@ export default function Textconvert(props) {
             <textarea
               className="form-control"
               style={{
-                backgroundColor: props.mode === "light" ? "white" : "grey",
+                backgroundColor: props.mode === "light" ? "white" : "#13466e",
                 color: props.mode === "light" ? "#042743" : "white",
               }}
               value={writtenText}
@@ -78,6 +79,7 @@ export default function Textconvert(props) {
               props.mode === "light" ? "primary" : "outline-primary"
             } mx-1 my-1`}
             onClick={handleUpClick}
+            disabled={writtenText.length === 0}
           >
             Convert to Uppercase
           </button>
@@ -86,6 +88,7 @@ export default function Textconvert(props) {
               props.mode === "light" ? "primary" : "outline-primary"
             } mx-1 my-1`}
             onClick={handleLoClick}
+            disabled={writtenText.length === 0}
           >
             Convert to Lowercase
           </button>
@@ -94,6 +97,7 @@ export default function Textconvert(props) {
               props.mode === "light" ? "primary" : "outline-primary"
             } mx-1 my-1`}
             onClick={hanleReveseClick}
+            disabled={writtenText.length === 0}
           >
             Click to Reverse Words
           </button>
@@ -102,6 +106,7 @@ export default function Textconvert(props) {
               props.mode === "light" ? "primary" : "outline-primary"
             } mx-1 my-1`}
             onClick={handleCopy}
+            disabled={writtenText.length === 0}
           >
             Copy Text
           </button>
@@ -110,6 +115,7 @@ export default function Textconvert(props) {
               props.mode === "light" ? "primary" : "outline-primary"
             } mx-1 my-1`}
             onClick={handleRemove}
+            disabled={writtenText.length === 0}
           >
             Remove Extra Space
           </button>
@@ -118,6 +124,7 @@ export default function Textconvert(props) {
               props.mode === "light" ? "danger" : "outline-danger"
             } mx-1 my-1`}
             onClick={handleClearClick}
+            disabled={writtenText.length === 0}
           >
             Clear
           </button>
@@ -129,18 +136,26 @@ export default function Textconvert(props) {
       >
         <h3>Text Summary</h3>
         <p>
-          <b>{writtenText.split(" ").length - 1}</b> Words and{" "}
-          <b>{writtenText.length}</b> Characters
+          <b>
+            {
+              writtenText.split(" ").filter((element) => {
+                return element.length !== 0;
+              }).length
+            }
+          </b>{" "}
+          Words and <b>{writtenText.length}</b> Characters
         </p>
         <p>
-          We can read in <b>{writtenText.split(" ").length * 0.8}</b> Minutes
+          We can read in{" "}
+          <b>
+            {writtenText.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length * 0.008}
+          </b>{" "}
+          Minutes
         </p>
         <h3>Preview</h3>
-        <p>
-          {writtenText.length > 0
-            ? writtenText
-            : "Enter Something Text for Preview Here."}
-        </p>
+        <p>{writtenText.length > 0 ? writtenText : "Nothing to Preview!"}</p>
       </div>
     </>
   );
