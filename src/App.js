@@ -4,7 +4,7 @@ import About from "./component/About";
 import Navbar from "./component/Navbar";
 import Textconvert from "./component/Textconvert";
 import Alert from "./component/Alert";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+/* import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; */
 
 function App() {
   const [mode, setmode] = useState("light");
@@ -38,7 +38,7 @@ function App() {
   };
   return (
     <>
-      <Router>
+     {/*  <Router> */}
         <Navbar
           title="TextUtils"
           aboutText="About TextUtils"
@@ -47,25 +47,25 @@ function App() {
           lableMode={lableMode}
         />
         <Alert alert={alert} />
-        <Routes>
-          <Route
+       {/*  <Routes> */}
+ {/*          <Route
             exact
             path="/"
-            element={
+            element={ */}
               <Textconvert
                 header="Enter text here for analyze below"
                 mode={mode}
                 showAlert={showAlert}
               />
-            }
-          />
+        {/*    }
+          /> 
           <Route
             exact
             path="/about"
             element={<About aboutTitle="About US" />}
           />
-        </Routes>
-      </Router>
+        </Routes> */}
+{/*       </Router> */}
     </>
   );
 }
