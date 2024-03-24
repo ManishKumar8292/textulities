@@ -76,7 +76,7 @@ export default function Textconvert(props) {
           <button
             className={`btn btn-${
               props.mode === "light" ? "primary" : "outline-primary"
-            } mx-1`}
+            } mx-1 my-1`}
             onClick={handleUpClick}
           >
             Convert to Uppercase
@@ -84,7 +84,7 @@ export default function Textconvert(props) {
           <button
             className={`btn btn-${
               props.mode === "light" ? "primary" : "outline-primary"
-            } mx-1`}
+            } mx-1 my-1`}
             onClick={handleLoClick}
           >
             Convert to Lowercase
@@ -92,7 +92,7 @@ export default function Textconvert(props) {
           <button
             className={`btn btn-${
               props.mode === "light" ? "primary" : "outline-primary"
-            } mx-1`}
+            } mx-1 my-1`}
             onClick={hanleReveseClick}
           >
             Click to Reverse Words
@@ -100,7 +100,7 @@ export default function Textconvert(props) {
           <button
             className={`btn btn-${
               props.mode === "light" ? "primary" : "outline-primary"
-            } mx-1`}
+            } mx-1 my-1`}
             onClick={handleCopy}
           >
             Copy Text
@@ -108,7 +108,7 @@ export default function Textconvert(props) {
           <button
             className={`btn btn-${
               props.mode === "light" ? "primary" : "outline-primary"
-            } mx-1`}
+            } mx-1 my-1`}
             onClick={handleRemove}
           >
             Remove Extra Space
@@ -116,7 +116,7 @@ export default function Textconvert(props) {
           <button
             className={`btn btn-${
               props.mode === "light" ? "danger" : "outline-danger"
-            } mx-1`}
+            } mx-1 my-1`}
             onClick={handleClearClick}
           >
             Clear
